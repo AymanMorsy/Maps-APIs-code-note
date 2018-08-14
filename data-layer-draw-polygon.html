@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        font-family: Arial, sans-serif;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        height: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 5,
+    center: {lat: 0, lng:0},
+  });
+
+
+  var pol = [
+  {lat: 0, lng:0},
+  {lat: 5, lng:0},
+  {lat: 5, lng:5},
+  {lat: 0, lng:5},
+
+  ];
+  var pol2 = [
+  {lat: 1, lng:1},
+  {lat: 4, lng:1},
+  {lat: 4, lng:4},
+  {lat: 1, lng:4},
+  ];
+
+  map.data.add({geometry: new google.maps.Data.Polygon([pol,pol2])})
+}
+   
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApGDRfR7U47hvOduKMcXVzZGSMGBtW-vY&v=3&callback=initMap">
+    </script>
+
+  </body>
+</html>
+
